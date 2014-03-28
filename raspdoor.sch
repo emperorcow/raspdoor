@@ -13543,6 +13543,13 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/39662c.pdf</description>
 <label x="81.28" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="MOSFET" class="0">
+<segment>
+<pinref part="IC1" gate="1" pin="DIGITAL_3(PWM)"/>
+<wire x1="78.74" y1="83.82" x2="93.98" y2="83.82" width="0.1524" layer="91"/>
+<label x="81.28" y="83.82" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
