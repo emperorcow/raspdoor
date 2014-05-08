@@ -14778,6 +14778,8 @@ Pad size and stop size allow for a #4 Phillips pan screw head to make a solid co
 <part name="J5" library="adafruit" deviceset="1X2" device="-3.5MM"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="P+7" library="supply1" deviceset="+5V" device=""/>
+<part name="J6" library="adafruit" deviceset="1X2" device="-3.5MM"/>
+<part name="GND16" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14788,6 +14790,8 @@ Pad size and stop size allow for a #4 Phillips pan screw head to make a solid co
 <text x="121.92" y="88.9" size="1.778" layer="91">Buzzer</text>
 <text x="121.92" y="83.82" size="1.778" layer="91">LED</text>
 <text x="121.92" y="81.28" size="1.778" layer="91">GND</text>
+<text x="121.92" y="66.04" size="1.778" layer="91">OVERRIDE</text>
+<text x="121.92" y="63.5" size="1.778" layer="91">GND</text>
 </plain>
 <instances>
 <instance part="IC1" gate="1" x="48.26" y="86.36"/>
@@ -14882,8 +14886,8 @@ Pad size and stop size allow for a #4 Phillips pan screw head to make a solid co
 <instance part="GND14" gate="1" x="210.82" y="17.78" rot="R90"/>
 <instance part="R8" gate="G$1" x="187.96" y="7.62" rot="R180"/>
 <instance part="D2" gate="G$1" x="167.64" y="10.16" rot="R270"/>
-<instance part="S1" gate="G$1" x="243.84" y="5.08" rot="R90"/>
-<instance part="S3" gate="G$1" x="259.08" y="5.08" rot="R90"/>
+<instance part="S1" gate="G$1" x="325.12" y="27.94" rot="R90"/>
+<instance part="S3" gate="G$1" x="325.12" y="12.7" rot="R90"/>
 <instance part="PWR" gate="G$1" x="88.9" y="12.7"/>
 <instance part="OPEN" gate="G$1" x="180.34" y="-7.62" rot="R180"/>
 <instance part="R9" gate="G$1" x="88.9" y="20.32" rot="R90"/>
@@ -14895,6 +14899,8 @@ Pad size and stop size allow for a #4 Phillips pan screw head to make a solid co
 <instance part="P+7" gate="1" x="106.68" y="104.14" smashed="yes">
 <attribute name="VALUE" x="109.22" y="106.68" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="J6" gate="G$1" x="114.3" y="63.5"/>
+<instance part="GND16" gate="1" x="106.68" y="58.42"/>
 </instances>
 <busses>
 </busses>
@@ -15072,9 +15078,15 @@ Pad size and stop size allow for a #4 Phillips pan screw head to make a solid co
 </segment>
 <segment>
 <pinref part="GND15" gate="1" pin="GND"/>
-<wire x1="106.68" y1="78.74" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="J5" gate="G$1" pin="2"/>
+<wire x1="106.68" y1="78.74" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="81.28" x2="109.22" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND16" gate="1" pin="GND"/>
+<wire x1="106.68" y1="60.96" x2="106.68" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="J6" gate="G$1" pin="2"/>
+<wire x1="106.68" y1="63.5" x2="109.22" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="2">
@@ -15571,6 +15583,13 @@ Pad size and stop size allow for a #4 Phillips pan screw head to make a solid co
 <wire x1="99.06" y1="81.28" x2="99.06" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="J4" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="88.9" x2="109.22" y2="88.9" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="IC1" gate="1" pin="DIGITAL_9(PWM)"/>
+<pinref part="J6" gate="G$1" pin="1"/>
+<wire x1="78.74" y1="66.04" x2="109.22" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
